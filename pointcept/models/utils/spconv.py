@@ -26,7 +26,10 @@ else:
                 "(`pip install spconv-triton`) or spconv, and neither can be imported "
                 f"(spconv_triton: {triton_error}; spconv: {spconv_error})"
             ) from spconv_error
-        if triton_error.name != "spconv_triton":
+        if not (
+            isinstance(triton_error, ModuleNotFoundError)
+            and triton_error.name == "spconv_triton"
+        ):
             warnings.warn(
                 f"spconv-triton is installed but failed to import ({triton_error}), "
                 "using spconv instead"
