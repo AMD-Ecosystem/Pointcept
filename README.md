@@ -200,6 +200,7 @@ If you find _Pointcept_ useful to your research, please cite our work as encoura
   # on AMD GPUs (ROCm), spconv has no AMD build, install the drop-in spconv-triton instead
   # refer https://github.com/L-Reichardt/spconv-triton
   pip install spconv-triton
+  # spconv-triton uses the Triton that comes with PyTorch; on Windows, install the triton-windows package for it (sparse convolution models are not yet validated on Windows)
 
   # PPT (clip)
   pip install ftfy regex tqdm
